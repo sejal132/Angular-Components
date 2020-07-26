@@ -1,0 +1,13 @@
+<a href="#" (click)="expandAll()">Expand All</a><br>
+<a href="#" (click)="favAll()">Favourite All</a>
+<app-blog-post-tile 
+#tile
+*ngFor ="let post of blogPosts[currPage]"
+[post]="post"></app-blog-post-tile>
+<app-paginator [numberofpages]="blogPosts.length" (pageNumberClicked)="updatePage($event)"></app-paginator>
+
+<!-- <div class="container">
+    <a href="#" (click)="expandAll()">Expand All</a>
+    <app-blog-post-tile [post]="blogPosts[0][0]" #tile></app-blog-post-tile>
+
+</div> -->
